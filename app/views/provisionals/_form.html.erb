@@ -1,0 +1,233 @@
+<%= form_for(@provisional) do |f| %>
+  <% if @provisional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@provisional.errors.count, "error") %> prohibited this provisional from being saved:</h2>
+
+      <ul>
+      <% @provisional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="TFtable">
+    <tr>
+    	<td width="40%"> 
+		<h3> <b> 1. Full Name of the Applicant </b><h3> </th> 
+	</td>
+ 	<td>
+  		<div class="field">
+    			<%= f.label :"Surname" %> <br>
+    			<%= f.text_field :fname %>
+  		</div>
+	   	<div class="field">
+    			<%= f.label :"Name" %> <br>
+		    	<%= f.text_field :mname %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Father's/Husband's Name" %> <br>
+    			<%= f.text_field :lname %>
+  		</div>
+ 	</td>
+   </tr>
+   <tr>
+	<td>
+		<h3> <b> 2. Permanent Address with Phone Number/Mobile Number </b><h3>
+	</td>
+	<td>
+  		<div class="field">
+    			<%= f.label :"Permanent Address " %><br>
+    			<%= f.text_area :per_address %>
+  		</div>
+		<div class="field">
+    			<%= f.label :"Mobile Number:" %><br>
+    			<%= f.number_field :mobile %>
+  		</div>
+	</td>
+   </tr>
+   <tr>
+	<td> <h3><b> 3. Postal Address for Correspondence </b></h3>  </td>
+	<td>
+		<div class="field">
+    			<%= f.label :"Correspondence Address" %><br>
+			<%= f.text_area :cor_address %>
+ 		</div>
+	</td>
+   </tr>
+   <tr>
+   	<td> <h3><b> 4. Date of Birth & Age  </b></h3> </td>
+	</td>
+   	<td> 
+  		<div class="field">
+    		<%= f.label :"Date of Birth - As entered in College/Institue Register" %> <br>
+    		<%= f.date_select :dbirth, :start_year => 1950, :end_year => 2020 %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Age " %><br>
+    			<%= f.number_field :age %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Nationality" %><br>
+    			<%= f.text_field :nationality %>
+  		</div>
+	</td>
+   </tr>
+   <tr>
+	<td> <h3><b> 5. Name & Address of the College or Institution last attended by the applicant in another University of Public Body </b></h3>
+	</td>
+	<td>
+		<div class="field">
+	    		<%= f.label :"Name of the last College or Institution" %><br>
+    			<%= f.text_field :lastCollegeName %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Address of the last College or Institution" %><br>
+    			<%= f.text_area :lastCollegeAddress %>
+  		</div>
+	</td>
+  </tr>
+  </table>
+  <h2><b> 6. Academic Details </b></h2>
+  <table class="TFtable">
+  	<thead>
+		<tr> 
+			<th>Standard </th>
+			<th>Passing Year </th>
+			<th>Subjects </th>
+			<th>Name of Board/University </th>
+		</tr>
+		
+	</thead>
+	<tbody>
+		<tr>
+			<td> <b>12th Standard <b></td>
+			<td> <%= f.date_select :std_12_pass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %> </td>
+			<td> <%= f.text_area :std_12_pass_subjects %> </td>
+			<td> <%= f.text_field :std_12_pass_board %> </td>
+		</tr>
+		<tr>
+			<td> <b>Diploma</b> </td>
+			<td> <%= f.date_select :diploma_pass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %> </td>
+			<td> <%= f.text_area :diploma_pass_subjects %> </td>
+			<td> <%= f.text_field :diploma_pass_university %> </td>
+		</tr>
+		<tr>
+			<td> <b>Graduation </b></td>
+			<td> <%= f.date_select :graduation_pass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %> </td>
+			<td> <%= f.text_area :graduation_pass_subjects %> </td>
+			<td> <%= f.text_field :graduation_pass_university %> </td>
+		</tr>
+		<tr>
+			<td> <b>Masters</b> </td>
+			<td> <%= f.date_select :masters_pass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %> </td>
+			<td> <%= f.text_area :masters_pass_subjects %> </td>
+			<td> <%= f.text_field :masters_pass_university %> </td>
+		</tr>
+
+	</tbody>
+  </table>	
+
+<table class="TFtable">
+    <tr>
+    	<td width="40%"> 
+		<h3><b> 7. Name of Last qualifying passed examination by the applicant in another University or Public Body : </b></h3> </th> 
+	</td>
+ 	<td>
+ 		<div class="field">
+    			<%= f.label :"Examination" %><br>
+    			<%= f.text_field :lastExamName %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Month & Year" %><br>
+    			<%= f.date_select :lastExamPass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Name of University/Board" %><br>
+    			<%= f.text_field :lastExamUniversity %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Subjects" %><br>
+    			<%= f.text_area :lastExamSubjects %>
+  		</div>
+	</td>
+    </tr>
+    <tr>
+	<td> <h3><b> 8. Examination if any, which the applicant appeared but fails in the examination. Mention the name of the University and Year.  </b></h3> </p>
+	</td>
+	<td>
+		<div class="field">
+    			<%= f.label :"Examination" %><br>
+    			<%= f.text_field :lastExamFailName %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Year" %><br>
+    			<%= f.date_select :lastExamFailYear, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"University" %><br>
+		    	<%= f.text_field :lastExamFailUniversity %>
+  		</div>
+	</td>
+    </tr>
+    <tr>
+	<td> <h3><b> 9. Reason or Reasons for seeking the admission in Parul University, Vadodara. </b> </h3>
+	</td>
+	<td>
+  		<div class="field">
+    			<%= f.label :"Reason" %><br>
+    			<%= f.text_area :reason %>
+  		</div>
+	</td>
+    </tr>
+    <tr>
+	<td>
+		<h3><b> 10. Constituent Institue and class to which the applicant is seeking the admission in Parul University, Vadodara. </b></h3> </td>
+	<td>
+		<div class="field">
+    			<%= f.label :"Class" %><br>
+    			<%= f.text_field :constituent_class %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Name of the Institute" %><br>
+    			<%= f.text_field :constituentInstituteName %>
+  		</div>
+  		<div class="field">
+   			 <%= f.label :"Place" %><br>
+    			<%= f.text_field :constituentInstitutePlace %>
+  		</div>
+	</td>
+    </tr>
+</table>
+  <div class="field">
+    <%= f.label :enteredBy %><br>
+    <%= f.text_field :enteredBy %>
+  </div>
+  
+  <center><div class="actions">
+   <%= f.submit %>
+  </div></center>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

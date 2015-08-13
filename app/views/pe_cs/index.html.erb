@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pecs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Mname</th>
+      <th>Lname</th>
+      <th>Per address</th>
+      <th>Mobile</th>
+      <th>Cor address</th>
+      <th>Dbirth</th>
+      <th>Age</th>
+      <th>Nationality</th>
+      <th>Lastcollegename</th>
+      <th>Lastcollegeaddress</th>
+      <th>Std 12 pass</th>
+      <th>Std 12 pass subjects</th>
+      <th>Std 12 pass board</th>
+      <th>Diploma pass</th>
+      <th>Diploma pass subjects</th>
+      <th>Diploma pass university</th>
+      <th>Graduation pass</th>
+      <th>Graduation pass subjects</th>
+      <th>Graduation pass university</th>
+      <th>Masters pass</th>
+      <th>Masters pass subjects</th>
+      <th>Masters pass university</th>
+      <th>Lastexamname</th>
+      <th>Lastexampass</th>
+      <th>Lastexamuniversity</th>
+      <th>Lastexamsubjects</th>
+      <th>Lastexamfailname</th>
+      <th>Lastexamfailyear</th>
+      <th>Lastexamfailuniversity</th>
+      <th>Reason</th>
+      <th>Constituent class</th>
+      <th>Constituentinstitutename</th>
+      <th>Constituentinstituteplace</th>
+      <th>Enteredby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pecs.each do |pec| %>
+      <tr>
+        <td><%= pec.fname %></td>
+        <td><%= pec.mname %></td>
+        <td><%= pec.lname %></td>
+        <td><%= pec.per_address %></td>
+        <td><%= pec.mobile %></td>
+        <td><%= pec.cor_address %></td>
+        <td><%= pec.dbirth %></td>
+        <td><%= pec.age %></td>
+        <td><%= pec.nationality %></td>
+        <td><%= pec.lastCollegeName %></td>
+        <td><%= pec.lastCollegeAddress %></td>
+        <td><%= pec.std_12_pass %></td>
+        <td><%= pec.std_12_pass_subjects %></td>
+        <td><%= pec.std_12_pass_board %></td>
+        <td><%= pec.diploma_pass %></td>
+        <td><%= pec.diploma_pass_subjects %></td>
+        <td><%= pec.diploma_pass_university %></td>
+        <td><%= pec.graduation_pass %></td>
+        <td><%= pec.graduation_pass_subjects %></td>
+        <td><%= pec.graduation_pass_university %></td>
+        <td><%= pec.masters_pass %></td>
+        <td><%= pec.masters_pass_subjects %></td>
+        <td><%= pec.masters_pass_university %></td>
+        <td><%= pec.lastExamName %></td>
+        <td><%= pec.lastExamPass %></td>
+        <td><%= pec.lastExamUniversity %></td>
+        <td><%= pec.lastExamSubjects %></td>
+        <td><%= pec.lastExamFailName %></td>
+        <td><%= pec.lastExamFailYear %></td>
+        <td><%= pec.lastExamFailUniversity %></td>
+        <td><%= pec.reason %></td>
+        <td><%= pec.constituent_class %></td>
+        <td><%= pec.constituentInstituteName %></td>
+        <td><%= pec.constituentInstitutePlace %></td>
+        <td><%= pec.enteredBy %></td>
+        <td><%= link_to 'Show', pec %></td>
+        <td><%= link_to 'Edit', edit_pec_path(pec) %></td>
+        <td><%= link_to 'Destroy', pec, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pec', new_pec_path %>

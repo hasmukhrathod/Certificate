@@ -1,0 +1,15 @@
+
+    :binary
+    :boolean
+    :date
+    :datetime
+    :decimal
+    :float
+    :integer
+    :bigint
+    :primary_key
+    :string
+    :text
+    :time
+    :timestamp
+

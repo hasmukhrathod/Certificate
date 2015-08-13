@@ -1,0 +1,92 @@
+<p id="notice"><%= notice %></p>
+
+<head>
+<style>
+
+#contain
+{
+border: 3px solid black;
+}
+
+#number p
+{
+    font-size: small;
+    text-align:left;
+    margin: 10px 10px 10px 10px;
+    font-style: italic;	
+    border: 3px solid yellow;
+ }
+
+
+#certificate-text p
+{
+   border: 3px solid green;
+    font-size: medium;
+    text-align:justify;
+    margin: 30px ;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+line-height: 200%;
+}
+
+
+#sign-left p
+{
+    font-size: medium;
+    text-align:left;
+    border: 1px solid black;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+    margin: 15px 15px 15px 15px;
+}
+#sign-left p.gap
+{
+    margin: 150px 15px 15px 15px;
+    font-size: medium;
+    text-align:left;
+    border: 1px solid black;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+}
+
+#sign-right p
+{
+    font-size: large;
+    text-align:right;
+    margin: 15px ;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif; 
+border: 1px solid yellow;
+}
+
+
+
+</style>
+</head>
+
+<div id="contain">
+	<section id="number">
+		<p> Certificate No:  <strong> PU/MIGRATION/<%= @migration.id %> </strong></p>
+	</section>
+	
+		<section id="certificate-text">
+		<p>
+This is to certify that Mr./Ms./Mrs.  <strong>  <%= @migration.lastName %> <%= @migration.firstName %> <%=@migration.middleName %>. </strong> joined this University on <strong> <%= @migration.joinedDate %> </strong> and left on <strong> <%= @migration.leftDate %> </strong> after passing at the <strong> <%= @migration.passExam %> </strong> examination, which was held in <strong> <%= @migration.dateExam %>. </strong>  He has paid all the dues up to the end of <strong> <%= @migration.duePaidDate %>. </strong> He/She has received education at an institution recognized by the University. 
+		</p>
+		<p>
+		This University has no objection to his/her joining any other University.
+		</p>
+		</section>
+
+		<section id="sign-left">
+		<p class="gap"> Date: <strong> <%= @migration.todayDate %> </strong> </p>
+		<p> Entered By: <strong><%= @migration.enteredBy %> </strong></p>
+		<p> Checked By: <strong><%= @migration.checkedBy %> </strong></p>
+		</section>
+
+		<section id="sign-right">
+		<p> For, Registrar </p>
+		<p> Parul University </p>		
+		</section>
+
+	
+
+</div>
+<%= link_to 'Edit', edit_migration_path(@migration) %> |
+<%= link_to 'Back', migrations_path %>

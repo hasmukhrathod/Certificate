@@ -1,0 +1,157 @@
+<%= form_for(@pec) do |f| %>
+  <% if @pec.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pec.errors.count, "error") %> prohibited this pec from being saved:</h2>
+
+      <ul>
+      <% @pec.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fname %><br>
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :mname %><br>
+    <%= f.text_field :mname %>
+  </div>
+  <div class="field">
+    <%= f.label :lname %><br>
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :per_address %><br>
+    <%= f.text_area :per_address %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.number_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :cor_address %><br>
+    <%= f.text_area :cor_address %>
+  </div>
+  <div class="field">
+    <%= f.label :dbirth %><br>
+    <%= f.date_select :dbirth %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br>
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :lastCollegeName %><br>
+    <%= f.text_field :lastCollegeName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastCollegeAddress %><br>
+    <%= f.text_area :lastCollegeAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :std_12_pass %><br>
+    <%= f.date_select :std_12_pass %>
+  </div>
+  <div class="field">
+    <%= f.label :std_12_pass_subjects %><br>
+    <%= f.text_area :std_12_pass_subjects %>
+  </div>
+  <div class="field">
+    <%= f.label :std_12_pass_board %><br>
+    <%= f.text_field :std_12_pass_board %>
+  </div>
+  <div class="field">
+    <%= f.label :diploma_pass %><br>
+    <%= f.date_select :diploma_pass %>
+  </div>
+  <div class="field">
+    <%= f.label :diploma_pass_subjects %><br>
+    <%= f.text_area :diploma_pass_subjects %>
+  </div>
+  <div class="field">
+    <%= f.label :diploma_pass_university %><br>
+    <%= f.text_field :diploma_pass_university %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_pass %><br>
+    <%= f.date_select :graduation_pass %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_pass_subjects %><br>
+    <%= f.text_area :graduation_pass_subjects %>
+  </div>
+  <div class="field">
+    <%= f.label :graduation_pass_university %><br>
+    <%= f.text_field :graduation_pass_university %>
+  </div>
+  <div class="field">
+    <%= f.label :masters_pass %><br>
+    <%= f.date_select :masters_pass %>
+  </div>
+  <div class="field">
+    <%= f.label :masters_pass_subjects %><br>
+    <%= f.text_area :masters_pass_subjects %>
+  </div>
+  <div class="field">
+    <%= f.label :masters_pass_university %><br>
+    <%= f.text_field :masters_pass_university %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamName %><br>
+    <%= f.text_field :lastExamName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamPass %><br>
+    <%= f.date_select :lastExamPass %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamUniversity %><br>
+    <%= f.text_field :lastExamUniversity %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamSubjects %><br>
+    <%= f.text_area :lastExamSubjects %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamFailName %><br>
+    <%= f.text_field :lastExamFailName %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamFailYear %><br>
+    <%= f.date_select :lastExamFailYear %>
+  </div>
+  <div class="field">
+    <%= f.label :lastExamFailUniversity %><br>
+    <%= f.text_field :lastExamFailUniversity %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :constituent_class %><br>
+    <%= f.text_field :constituent_class %>
+  </div>
+  <div class="field">
+    <%= f.label :constituentInstituteName %><br>
+    <%= f.text_field :constituentInstituteName %>
+  </div>
+  <div class="field">
+    <%= f.label :constituentInstitutePlace %><br>
+    <%= f.text_field :constituentInstitutePlace %>
+  </div>
+  <div class="field">
+    <%= f.label :enteredBy %><br>
+    <%= f.text_field :enteredBy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

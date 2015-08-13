@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lastName: MyString
+  firstName: MyString
+  middleName: MyString
+  joinedDate: 2015-07-29
+  leftDate: 2015-07-29
+  passExam: 2015-07-29
+  dateExam: 2015-07-29
+  duePaidDate: 2015-07-29
+  todayDate: 2015-07-29
+  enteredBy: MyString
+  checkedBy: MyString
+
+two:
+  lastName: MyString
+  firstName: MyString
+  middleName: MyString
+  joinedDate: 2015-07-29
+  leftDate: 2015-07-29
+  passExam: 2015-07-29
+  dateExam: 2015-07-29
+  duePaidDate: 2015-07-29
+  todayDate: 2015-07-29
+  enteredBy: MyString
+  checkedBy: MyString

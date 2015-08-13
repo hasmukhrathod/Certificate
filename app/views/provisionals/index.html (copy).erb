@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Provisionals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fname</th>
+      <th>Mname</th>
+      <th>Lname</th>
+      <th>Per address</th>
+      <th>Mobile</th>
+      <th>Cor address</th>
+      <th>Dbirth</th>
+      <th>Age</th>
+      <th>Nationality</th>
+      <th>Lastcollegename</th>
+      <th>Lastcollegeaddress</th>
+      <th>Std 12 pass</th>
+      <th>Std 12 pass subjects</th>
+      <th>Std 12 pass board</th>
+      <th>Diploma pass</th>
+      <th>Diploma pass subjects</th>
+      <th>Diploma pass university</th>
+      <th>Graduation pass</th>
+      <th>Graduation pass subjects</th>
+      <th>Graduation pass university</th>
+      <th>Masters pass</th>
+      <th>Masters pass subjects</th>
+      <th>Masters pass university</th>
+      <th>Lastexamname</th>
+      <th>Lastexampass</th>
+      <th>Lastexamuniversity</th>
+      <th>Lastexamsubjects</th>
+      <th>Lastexamfailname</th>
+      <th>Lastexamfailyear</th>
+      <th>Lastexamfailuniversity</th>
+      <th>Reason</th>
+      <th>Constituent class</th>
+      <th>Constituentinstitutename</th>
+      <th>Constituentinstituteplace</th>
+      <th>Enteredby</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @provisionals.each do |provisional| %>
+      <tr>
+        <td><%= provisional.fname %></td>
+        <td><%= provisional.mname %></td>
+        <td><%= provisional.lname %></td>
+        <td><%= provisional.per_address %></td>
+        <td><%= provisional.mobile %></td>
+        <td><%= provisional.cor_address %></td>
+        <td><%= provisional.dbirth %></td>
+        <td><%= provisional.age %></td>
+        <td><%= provisional.nationality %></td>
+        <td><%= provisional.lastCollegeName %></td>
+        <td><%= provisional.lastCollegeAddress %></td>
+        <td><%= provisional.std_12_pass %></td>
+        <td><%= provisional.std_12_pass_subjects %></td>
+        <td><%= provisional.std_12_pass_board %></td>
+        <td><%= provisional.diploma_pass %></td>
+        <td><%= provisional.diploma_pass_subjects %></td>
+        <td><%= provisional.diploma_pass_university %></td>
+        <td><%= provisional.graduation_pass %></td>
+        <td><%= provisional.graduation_pass_subjects %></td>
+        <td><%= provisional.graduation_pass_university %></td>
+        <td><%= provisional.masters_pass %></td>
+        <td><%= provisional.masters_pass_subjects %></td>
+        <td><%= provisional.masters_pass_university %></td>
+        <td><%= provisional.lastExamName %></td>
+        <td><%= provisional.lastExamPass %></td>
+        <td><%= provisional.lastExamUniversity %></td>
+        <td><%= provisional.lastExamSubjects %></td>
+        <td><%= provisional.lastExamFailName %></td>
+        <td><%= provisional.lastExamFailYear %></td>
+        <td><%= provisional.lastExamFailUniversity %></td>
+        <td><%= provisional.reason %></td>
+        <td><%= provisional.constituent_class %></td>
+        <td><%= provisional.constituentInstituteName %></td>
+        <td><%= provisional.constituentInstitutePlace %></td>
+        <td><%= provisional.enteredBy %></td>
+        <td><%= link_to 'Show', provisional %></td>
+        <td><%= link_to 'Edit', edit_provisional_path(provisional) %></td>
+        <td><%= link_to 'Destroy', provisional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Provisional', new_provisional_path %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificate</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% Date::DATE_FORMATS[:default] = "%e/%B/%Y" %>
+
+<div id="container" style="width: 100%;overflow:auto;">
+
+		<div id="left" style="float:left;">
+			<%= image_tag('images2.jpeg') %>
+		</div>
+
+		<div id="right" style="float:right;">
+			<p class="title_name"> Parul University </p>	
+		</div>
+</div>
+
+<div id="content" style="width: 100%;overflow:auto;">
+
+		<div id="left_navigation" style="float:left;">
+			<p class="link"> <%= link_to 'Home', :controller => 'home', :action => 'index' %> </p> <br>			
+			<p class="link"> <%= link_to 'PEC Full- Registration', new_provisional_path %> </p> <br>
+			<p class="link"> <%= link_to 'PEC Quick - Registration', quick_provisional_path %> </p> <br>
+			<p class="link"> <%= link_to 'PEC - Listing', provisionals_path %> </p> <br>
+			<p class="link"> <%= link_to 'PEC - Generation', :controller => 'provisionals', :action => 'generate' %> </p> <br>
+			<p class="link"> <%= link_to 'FEC - Registration', new_provisional_path %> </p> <br>
+			<p class="link"> <%= link_to 'FEC - Listing', provisionals_path %> </p> <br>
+			<p class="link"> <%= link_to 'FEC - Generation', provisionals_path %> </p> <br>
+<!--
+			<p class="link"> <%= link_to 'Migration - Registration', new_provisional_path %> </p> <br>
+			<p class="link"> <%= link_to 'Migration - Listing', provisionals_path %> </p> <br>
+			<p class="link"> <%= link_to 'Migratioin - Generation', provisionals_path %> </p> <br>
+-->	
+
+				
+ 			</div>
+
+		<div id="right" style="float:right;">
+				<%= yield %>			
+		</div>
+</div>
+
+
+
+</body>
+</html>

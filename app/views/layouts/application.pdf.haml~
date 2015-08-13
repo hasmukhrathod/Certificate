@@ -1,0 +1,32 @@
+
+<div id="container">
+	<header> 
+		<div id="title_name">Parul University</div>
+		
+		<div id="certificate_name">Migration Certificate</div>
+
+		<div>
+			<section id="number">
+				<p> Certificate No:     </p>
+			</section>
+		<div>
+	</header>
+	<div>
+		<section id="certificate-text">
+			
+		</section>
+		<section id="sign-left">
+			
+		</section>
+		<section id="sign-right">
+			
+		</section>
+
+	</div>
+
+
+</div>
+
+
+
+<%= yield %>

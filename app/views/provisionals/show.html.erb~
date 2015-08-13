@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Surname:</strong>
+  <%= @provisional.fname %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @provisional.mname %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @provisional.mobile %>
+</p>
+
+<p>
+  <strong>Date Of Birth:</strong>
+  <%= @provisional.dbirth %>
+</p>
+
+<p>
+  <strong>Last College/School Name:</strong>
+  <%= @provisional.lastCollegeName %>
+</p>
+
+<p>
+  <strong>Last College/School Address:</strong>
+  <%= @provisional.lastCollegeAddress %>
+</p>
+
+<p>
+  <strong>Std 12 pass:</strong>
+  <%= @provisional.std_12_pass %>
+</p>
+
+<p>
+  <strong>Std 12 pass board:</strong>
+  <%= @provisional.std_12_pass_board %>
+</p>
+
+<p>
+  <strong>Lastexamname:</strong>
+  <%= @provisional.lastExamName %>
+</p>
+
+<p>
+  <strong>Lastexampass:</strong>
+  <%= @provisional.lastExamPass %>
+</p>
+
+<p>
+  <strong>Lastexamuniversity:</strong>
+  <%= @provisional.lastExamUniversity %>
+</p>
+
+<p>
+  <strong>Enteredby:</strong>
+  <%= @provisional.enteredBy %>
+</p>
+
+<%= link_to 'Edit', edit_provisional_path(@provisional) %> |
+<%= link_to 'Back', provisionals_path %>

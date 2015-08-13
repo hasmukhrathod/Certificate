@@ -1,0 +1,61 @@
+<%= form_for(@migration) do |f| %>
+  <% if @migration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@migration.errors.count, "error") %> prohibited this migration from being saved:</h2>
+
+      <ul>
+      <% @migration.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lastName %><br>
+    <%= f.text_field :lastName %>
+  </div>
+  <div class="field">
+    <%= f.label :firstName %><br>
+    <%= f.text_field :firstName %>
+  </div>
+  <div class="field">
+    <%= f.label :middleName %><br>
+    <%= f.text_field :middleName %>
+  </div>
+  <div class="field">
+    <%= f.label :joinedDate %><br>
+    <%= f.date_select :joinedDate %>
+  </div>
+  <div class="field">
+    <%= f.label :leftDate %><br>
+    <%= f.date_select :leftDate %>
+  </div>
+  <div class="field">
+    <%= f.label :passExam %><br>
+    <%= f.text_field :passExam %>
+  </div>
+  <div class="field">
+    <%= f.label :dateExam %><br>
+    <%= f.date_select :dateExam %>
+  </div>
+  <div class="field">
+    <%= f.label :duePaidDate %><br>
+    <%= f.date_select :duePaidDate %>
+  </div>
+  <div class="field">
+    <%= f.label :todayDate %><br>
+    <%= f.date_select :todayDate %>
+  </div>
+  <div class="field">
+    <%= f.label :enteredBy %><br>
+    <%= f.text_field :enteredBy %>
+  </div>
+  <div class="field">
+    <%= f.label :checkedBy %><br>
+    <%= f.text_field :checkedBy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

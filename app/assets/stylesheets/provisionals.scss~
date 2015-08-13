@@ -1,0 +1,32 @@
+// Place all the styles related to the provisionals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.TFtable{
+		
+		border-collapse:collapse; 
+	}
+
+.TFtable td{ 
+		padding:7px; 
+		border:#4e95f4 1px solid;
+	}
+
+.TFtable th{ 
+		padding:7px; 
+		border:#4e95f4 1px solid;
+		border: 2px solid black;
+		background: white;
+	}
+	/* provide some minimal visual accomodation for IE8 and below */
+.TFtable tr{
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the ODD background rows  */
+.TFtable tr:nth-child(odd){ 
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+.TFtable tr:nth-child(even){
+		background: #dae5f4;
+	}
+

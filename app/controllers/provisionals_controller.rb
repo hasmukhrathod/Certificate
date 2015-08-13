@@ -1,0 +1,95 @@
+class ProvisionalsController < ApplicationController
+  before_action :set_provisional, only: [:show, :edit, :update, :destroy]
+
+  # GET /provisionals
+  # GET /provisionals.json
+  def index
+    @provisionals = Provisional.all
+  end
+
+  # GET /provisionals/1
+  # GET /provisionals/1.json
+  def show
+	respond_to do |format|
+    		format.html
+    		format.pdf do
+      			render pdf: @provisional.fname,         # file name
+             		layout: 'layouts/application.pdf.erb',  # layout used
+             		show_as_html: params[:debug].present?    # allow debuging
+    			end
+  		end
+  end
+
+  # GET /provisionals/new
+  def new
+    @provisional = Provisional.new
+  end
+
+  # GET /provisionals/1/edit
+  def edit
+  end
+
+  # POST /provisionals
+  # POST /provisionals.json
+  def create
+    @provisional = Provisional.new(provisional_params)
+
+    respond_to do |format|
+      if @provisional.save
+        format.html { redirect_to @provisional, notice: 'Provisional was successfully created.' }
+        format.json { render :show, status: :created, location: @provisional }
+      else
+        format.html { render :new }
+        format.json { render json: @provisional.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /provisionals/1
+  # PATCH/PUT /provisionals/1.json
+  def update
+    respond_to do |format|
+      if @provisional.update(provisional_params)
+        format.html { redirect_to @provisional, notice: 'Provisional was successfully updated.' }
+        format.json { render :show, status: :ok, location: @provisional }
+      else
+        format.html { render :edit }
+        format.json { render json: @provisional.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /provisionals/1
+  # DELETE /provisionals/1.json
+  def destroy
+    @provisional.destroy
+    respond_to do |format|
+      format.html { redirect_to provisionals_url, notice: 'Provisional was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def generate
+	@provisionals = Provisional.all
+	respond_to do |format|
+    		format.html
+    		format.pdf do
+      			render pdf: @provisionals.fname,         # file name
+             		#layout: 'layouts/application.pdf.erb',  # layout used
+             		show_as_html: params[:debug].present?    # allow debuging
+    			end
+  		end
+  end
+
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_provisional
+      @provisional = Provisional.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def provisional_params
+      params.require(:provisional).permit(:fname, :mname, :lname, :per_address, :mobile, :cor_address, :dbirth, :age, :nationality, :lastCollegeName, :lastCollegeAddress, :std_12_pass, :std_12_pass_subjects, :std_12_pass_board, :diploma_pass, :diploma_pass_subjects, :diploma_pass_university, :graduation_pass, :graduation_pass_subjects, :graduation_pass_university, :masters_pass, :masters_pass_subjects, :masters_pass_university, :lastExamName, :lastExamPass, :lastExamUniversity, :lastExamSubjects, :lastExamFailName, :lastExamFailYear, :lastExamFailUniversity, :reason, :constituent_class, :constituentInstituteName, :constituentInstitutePlace, :enteredBy)
+    end
+end

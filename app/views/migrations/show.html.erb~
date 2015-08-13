@@ -1,0 +1,43 @@
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+
+This is to certify that <strong> <%= @migration.lastName %> <%= @migration.firstName %> <%= @migration.middleName %></strong>. joined this University in <%= @migration.joinedDate %> and left in <%= @migration.leftDate %> 
+</p>
+
+<p>
+  <strong>Passexam:</strong>
+  <%= @migration.passExam %>
+</p>
+
+<p>
+  <strong>Dateexam:</strong>
+  <%= @migration.dateExam %>
+</p>
+
+<p>
+  <strong>Duepaiddate:</strong>
+  <%= @migration.duePaidDate %>
+</p>
+
+<p>
+  <strong>Todaydate:</strong>
+  <%= @migration.todayDate %>
+</p>
+
+<p>
+  <strong>Enteredby:</strong>
+  <%= @migration.enteredBy %>
+</p>
+
+<p>
+  <strong>Checkedby:</strong>
+  <%= @migration.checkedBy %>
+</p>
+
+<%= link_to 'Edit', edit_migration_path(@migration) %> |
+<%= link_to 'Back', migrations_path %>

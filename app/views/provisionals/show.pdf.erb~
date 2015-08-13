@@ -1,0 +1,88 @@
+<p id="notice"><%= notice %></p>
+
+<head>
+<style>
+
+#contain
+{
+border: 3px solid black;
+}
+
+#number p
+{
+    font-size: small;
+    text-align:left;
+    margin: 10px 10px 10px 10px;
+    font-style: italic;	
+   /* border: 3px solid yellow; */
+ }
+
+
+#certificate-text p
+{
+  /* border: 3px solid green; */
+    font-size: medium;
+    text-align:justify;
+    margin: 30px ;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+line-height: 200%;
+}
+
+
+#sign-left p
+{
+    font-size: medium;
+    text-align:left;
+  /*  border: 1px solid black; */
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+    margin: 15px 15px 15px 15px;
+}
+#sign-left p.gap
+{
+    margin: 150px 15px 15px 15px;
+    font-size: medium;
+    text-align:left;
+   /* border: 1px solid black; */
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif;
+}
+
+#sign-right p
+{
+    font-size: large;
+    text-align:right;
+    margin: 15px ;
+    font-family: Tahoma, Arial, “Trebuchet MS”, Helvetica, sans-serif; 
+  /*  border: 1px solid yellow; */
+}
+
+</style>
+</head>
+<p class="certificate_name"> Provisional Eligibility Certificate </p>
+<div id="contain">
+	<section id="number">
+		<p> Certificate No:  <strong> PU/PEC/<%= @provisional.id %> </strong></p>
+	</section>
+	
+		<section id="certificate-text">
+		<p>
+Mr./Ms./Mrs. <div id="name"> <strong>  <%= @provisional.fname %> <%= @provisional.mname %> <%= @provisional.lname %> </strong> </div>has passed/failed in the <strong> <%= @provisional.lastExamName %> </strong> examination of the <strong> <%= @provisional.lastExamUniversity %> </strong> University/Board/Institution. He/She is eligible for admission to <strong> <%= @provisional.constituent_class %>, <%= @provisional.constituentInstituteName %>  </strong> class as earlier passed the <strong> <%= @provisional.lastExamName %> </strong> examination from <strong> <%= @provisional.lastExamUniversity %>  </strong> University/Board/Institution in <strong> <%= @provisional.lastExamPass.strftime("%B %Y") %>  </strong> (Month & Year of passing). Order may please be passed for issue of Provisional/Final Eligibility Certificate. 
+		</p>
+		</section>
+
+		<section id="sign-right">
+		<p> Clerk In-Charge </p>
+		</section>
+
+		<section id="sign-left">
+		<p> ORDER: The Provisional Eligibility Certificate should be issued. </p> 
+		</section>
+
+		<section id="sign-right">
+		<p> For, Registrar </p>
+		<p> Parul University </p>		
+		</section>
+
+	
+
+</div>
+

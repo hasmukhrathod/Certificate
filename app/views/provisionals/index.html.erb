@@ -5,6 +5,7 @@
 <table class="TFtable">
   <thead>
     <tr>
+      <th>PEC No.</th>
       <th>Surname</th>
       <th>Name</th>
       <th>Mobile</th>
@@ -19,10 +20,11 @@
   <tbody>
     <% @provisionals.each do |provisional| %>
       <tr>
+	<td>PU/PEC/<%= provisional.id %></td> 
         <td><%= provisional.fname %></td>
         <td><%= provisional.mname %></td>
         <td><%= provisional.mobile %></td>
-      <td><%= provisional.lastExamName %></td>
+        <td><%= provisional.lastExamName %></td>
         <td><%= provisional.lastExamPass.strftime("%B %Y") %></td>
 	<td><%= provisional.lastExamUniversity %></td>  <td><%= provisional.enteredBy %></td>
         <td><%= link_to 'Show', provisional %></td>

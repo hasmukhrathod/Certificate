@@ -24,6 +24,9 @@ class ProvisionalsController < ApplicationController
   def new
     @provisional = Provisional.new
   end
+  def quick
+	@provisional = Provisional.new
+  end
 
   # GET /provisionals/1/edit
   def edit

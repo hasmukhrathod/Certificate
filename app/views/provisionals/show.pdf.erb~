@@ -65,18 +65,18 @@ line-height: 200%;
 	
 		<section id="certificate-text">
 		<p>
-Mr./Ms./Mrs. <div id="name"> <strong>  <%= @provisional.fname %> <%= @provisional.mname %> <%= @provisional.lname %> </strong> </div>has passed/failed in the <strong> <%= @provisional.lastExamName %> </strong> examination of the <strong> <%= @provisional.lastExamUniversity %> </strong> University/Board/Institution. He/She is eligible for admission to <strong> <%= @provisional.constituent_class %>, <%= @provisional.constituentInstituteName %>  </strong> class as earlier passed the <strong> <%= @provisional.lastExamName %> </strong> examination from <strong> <%= @provisional.lastExamUniversity %>  </strong> University/Board/Institution in <strong> <%= @provisional.lastExamPass.strftime("%B %Y") %>  </strong> (Month & Year of passing). Order may please be passed for issue of Provisional/Final Eligibility Certificate. 
+Mr./Ms./Mrs. <strong>  <%= @provisional.fname %> <%= @provisional.mname %> <%= @provisional.lname %> </strong> has passed/failed in the <strong> <%= @provisional.lastExamName %> </strong> examination of the <strong> <%= @provisional.lastExamUniversity %> </strong> University/Board/Institution. He/She is eligible for admission to <strong> <%= @provisional.constituent_class %>, <%= @provisional.constituentInstituteName %>  </strong> class as earlier passed the <strong> <%= @provisional.lastExamName %> </strong> examination from <strong> <%= @provisional.lastExamUniversity %>  </strong> University/Board/Institution in <strong> <%= @provisional.lastExamPass.strftime("%B %Y") %>  </strong> (Month & Year of passing). Order may please be passed for issue of Provisional/Final Eligibility Certificate. 
 		</p>
 		</section>
-
+		
 		<section id="sign-right">
-		<p> Clerk In-Charge </p>
+		
 		</section>
-
+		<br>
 		<section id="sign-left">
-		<p> ORDER: The Provisional Eligibility Certificate should be issued. </p> 
+			<p> Clerk In-Charge </p>
 		</section>
-
+		<br>
 		<section id="sign-right">
 		<p> For, Registrar </p>
 		<p> Parul University </p>		

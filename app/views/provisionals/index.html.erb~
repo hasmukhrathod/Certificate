@@ -5,12 +5,13 @@
 <table class="TFtable">
   <thead>
     <tr>
+      <th>PEC No.</th>
       <th>Surname</th>
       <th>Name</th>
       <th>Mobile</th>
-      <th>Lastcollegename</th>
-      <th>Lastcollegeaddress</th>
-      <th>Lastexamname</th>
+      <th>Last Exam Name</th>
+      <th>Last Exam Passed </th>
+      <th>Last Exam Board/University</th>
       <th>Enteredby</th>
       <th colspan="3"></th>
     </tr>
@@ -19,13 +20,13 @@
   <tbody>
     <% @provisionals.each do |provisional| %>
       <tr>
+	<td>PU/PEC/<%= @provisional.id %></td> 
         <td><%= provisional.fname %></td>
         <td><%= provisional.mname %></td>
         <td><%= provisional.mobile %></td>
-        <td><%= provisional.lastCollegeName %></td>
-        <td><%= provisional.lastCollegeAddress %></td>
         <td><%= provisional.lastExamName %></td>
-        <td><%= provisional.enteredBy %></td>
+        <td><%= provisional.lastExamPass.strftime("%B %Y") %></td>
+	<td><%= provisional.lastExamUniversity %></td>  <td><%= provisional.enteredBy %></td>
         <td><%= link_to 'Show', provisional %></td>
         <td><%= link_to 'Edit', edit_provisional_path(provisional) %></td>
         <td><%= link_to 'Destroy', provisional, method: :delete, data: { confirm: 'Are you sure?' } %></td>

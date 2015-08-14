@@ -1,0 +1,119 @@
+<%= form_for(@provisional) do |f| %>
+  <% if @provisional.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@provisional.errors.count, "error") %> prohibited this provisional from being saved:</h2>
+
+      <ul>
+      <% @provisional.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="TFtable">
+    <tr>
+    	<td width="40%"> 
+		<h3> <b> 1. Full Name of the Applicant </b><h3> </th> 
+	</td>
+ 	<td>
+  		<div class="field">
+    			<%= f.label :"Surname" %> <br>
+    			<%= f.text_field :fname %>
+  		</div>
+	   	<div class="field">
+    			<%= f.label :"Name" %> <br>
+		    	<%= f.text_field :mname %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Father's/Husband's Name" %> <br>
+    			<%= f.text_field :lname %>
+  		</div>
+ 	</td>
+   </tr>
+   <tr>
+	<td>
+		<h3> <b> 2. Mobile Number </b><h3>
+	</td>
+	<td>
+  		<div class="field">
+    			<%= f.label :"Mobile Number:" %><br>
+    			<%= f.number_field :mobile %>
+  		</div>
+	</td>
+   </tr>
+   
+   </table>
+ 
+<table class="TFtable">
+    <tr>
+    	<td width="40%"> 
+		<h3><b> 3. Name of Last qualifying passed examination by the applicant in another University or Public Body : </b></h3> </th> 
+	</td>
+ 	<td>
+ 		<div class="field">
+    			<%= f.label :"Examination" %><br>
+    			<%= f.text_field :lastExamName %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Month & Year" %><br>
+    			<%= f.date_select :lastExamPass, :start_year => 1950, :end_year => 2020, :discard_day => 'true', :include_blank => 'true' %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Name of University/Board" %><br>
+    			<%= f.text_field :lastExamUniversity %>
+  		</div>
+  		
+	</td>
+    </tr>
+    <tr>
+	<td>
+		<h3><b> 4. Constituent Institue and class to which the applicant is seeking the admission in Parul University, Vadodara. </b></h3> </td>
+	<td>
+		<div class="field">
+    			<%= f.label :"Class" %><br>
+    			<%= f.text_field :constituent_class %>
+  		</div>
+  		<div class="field">
+    			<%= f.label :"Name of the Institute" %><br>
+    			<%= f.text_field :constituentInstituteName %>
+  		</div>
+  		<div class="field">
+   			 <%= f.label :"Place" %><br>
+    			<%= f.text_field :constituentInstitutePlace %>
+  		</div>
+	</td>
+    </tr>
+</table>
+  <div class="field">
+    <%= f.label :enteredBy %><br>
+    <%= f.text_field :enteredBy %>
+  </div>
+  
+  <center><div class="actions">
+   <%= f.submit %>
+  </div></center>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,7 @@ class ProvisionalsController < ApplicationController
     		format.html
     		format.pdf do
       			render pdf: @provisional.fname,         # file name
-             		#layout: 'layouts/application.pdf.erb',  # layout used
+             		layout: 'layouts/application.pdf.erb',  # layout used
              		show_as_html: params[:debug].present?    # allow debuging
     			end
   		end

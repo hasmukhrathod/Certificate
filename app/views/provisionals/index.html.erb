@@ -1,6 +1,19 @@
+
+
+<%= form_tag provisionals_path, :method => 'get', :id => "provisionals_search" do %>
+  <p>
+    Enter name to Search a record.
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Provisionals</h1>
+<h1><center> PEC Listing </center></h1>
 
 <table class="TFtable">
   <thead>
@@ -35,6 +48,7 @@
   </tbody>
 </table>
 
+<%= will_paginate @provisionals %>
 <br>
 
-<%= link_to 'New Provisional', new_provisional_path %>
+

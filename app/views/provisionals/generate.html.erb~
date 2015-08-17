@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Provisionals</h1>
+<h1>PEC Generations</h1>
 
 <table class="TFtable">
   <thead>
     <tr>
+      <th>PEC No.</th>
       <th>Surname</th>
       <th>Name</th>
       <th>Last Exam Name</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @provisionals.each do |provisional| %>
       <tr>
+	<td>PU/PEC/<%= provisional.id %></td> 
         <td><%= provisional.fname %></td>
         <td><%= provisional.mname %></td>
         <td><%= provisional.lastExamName %></td>

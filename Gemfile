@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
-
+gem 'will_paginate'	
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

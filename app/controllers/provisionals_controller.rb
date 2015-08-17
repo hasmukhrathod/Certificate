@@ -4,7 +4,7 @@ class ProvisionalsController < ApplicationController
   # GET /provisionals
   # GET /provisionals.json
   def index
-    @provisionals = Provisional.all
+    @provisionals = Provisional.all.search(params[:search]).paginate(:per_page => 10, :page => params[:page])
   end
 
   # GET /provisionals/1

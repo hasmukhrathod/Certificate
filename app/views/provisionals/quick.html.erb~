@@ -1,5 +1,5 @@
 <center> <h1>APPLICATION FOR CERTIFICATE OF ELIGIBILITY</h1> </center>
 
-<%= render 'form' %>
+<%= render 'form_quick' %>
 
-<%= link_to 'Back', provisionals_path %>
+
